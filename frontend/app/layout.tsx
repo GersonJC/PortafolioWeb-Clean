@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Gerson Josue Carranza Amaya", url: "https://github.com/GersonJC" }],
   creator: "Gerson Carranza",
   publisher: "Gerson Carranza",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL), // Cambiarás esto después del deploy
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://gcportafolio.netlify.app'), // Cambiarás esto después del deploy
   alternates: {
     canonical: '/',
   },
