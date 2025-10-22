@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Environment variables
+.env*.local
+frontend/.env*.local
+
+# Backend artifacts
+backend/bin/
+backend/obj/
+backend/local.settings.json
+backend/publish/
+backend/*.zip
+
+# IDE
+.vscode/
+.vs/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
