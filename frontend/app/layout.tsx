@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Gerson Carranza | Ingeniero de Sistemas & Data Analyst",
     description: "Portafolio profesional mostrando proyectos de análisis de datos, desarrollo backend y business intelligence",
-    url: process.env.NEXT_PUBLIC_SITE_URL,
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://gcportafolio.netlify.app',
     siteName: 'Gerson Carranza Portfolio',
     images: [
       {
