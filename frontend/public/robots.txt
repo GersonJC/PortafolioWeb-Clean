@@ -2,4 +2,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gersoncarranza.vercel.app/sitemap.xml
+Sitemap: https://gcportafolio.netlify.app/sitemap.xml
+
+NEXT_PUBLIC_SITE_URL=https://gcportafolio.netlify.app
+NEXT_PUBLIC_API_URL=https://https://gerson-portfolio-api-hecqg3cyedambyef.canadacentral-01.azurewebsites.net/api

@@ -31,14 +31,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Gerson Josue Carranza Amaya", url: "https://github.com/GersonJC" }],
   creator: "Gerson Carranza",
   publisher: "Gerson Carranza",
-  metadataBase: new URL('https://gersoncarranza.vercel.app'), // Cambiarás esto después del deploy
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL), // Cambiarás esto después del deploy
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Gerson Carranza | Ingeniero de Sistemas & Data Analyst",
     description: "Portafolio profesional mostrando proyectos de análisis de datos, desarrollo backend y business intelligence",
-    url: 'https://gersoncarranza.vercel.app',
+    url: process.env.NEXT_PUBLIC_SITE_URL,
     siteName: 'Gerson Carranza Portfolio',
     images: [
       {
