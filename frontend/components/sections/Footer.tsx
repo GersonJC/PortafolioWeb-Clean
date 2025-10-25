@@ -1,30 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
-
-const socialLinks = [
-  {
-    icon: Github,
-    href: 'https://github.com/GersonJC',
-    label: 'GitHub',
-  },
-  {
-    icon: Linkedin,
-    href: '#', // Reemplaza con tu LinkedIn
-    label: 'LinkedIn',
-  },
-  {
-    icon: Mail,
-    href: 'mailto:jotag.carranza@gmail.com',
-    label: 'Email',
-  },
-];
+import { Heart } from 'lucide-react';
+import { socialLinks } from '@/lib/links';
 
 const quickLinks = [
   { name: 'Sobre Mí', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Experiencia', href: '#experience' },
+  //{ name: 'Skills', href: '#skills' },
+  //{ name: 'Experiencia', href: '#experience' },
   { name: 'Proyectos', href: '#projects' },
   { name: 'Contacto', href: '#contact' },
 ];

@@ -13,16 +13,10 @@ const contactInfo = [
     href: 'mailto:jotag.carranza@gmail.com',
   },
   {
-    icon: MapPin,
-    label: 'Ubicación',
-    value: 'Lima, Perú',
-    href: null,
-  },
-  {
     icon: Linkedin,
     label: 'LinkedIn',
     value: 'Perfil profesional',
-    href: '#', // Reemplaza con tu URL de LinkedIn
+    href: 'https://www.linkedin.com/in/gersoncarranza/', 
   },
   {
     icon: Github,

@@ -13,7 +13,7 @@ export function ProjectsSection() {
 
   if (isLoading) {
     return (
-      <section className="py-20 px-4">
+      <section id="projects" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">Proyectos Destacados</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -32,7 +32,7 @@ export function ProjectsSection() {
 
   if (error) {
     return (
-      <section className="py-20 px-4">
+      <section id="projects" className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">Proyectos Destacados</h2>
           <p className="text-red-500">Error al cargar proyectos: {error.message}</p>
@@ -45,7 +45,7 @@ export function ProjectsSection() {
   }
 
   return (
-    <section className="py-20 px-4 bg-secondary/20">
+    <section id="projects" className="py-20 px-4 bg-secondary/20">
       <div className="max-w-7xl mx-auto">
         <motion.h2
           className="text-4xl font-bold mb-12 text-center"

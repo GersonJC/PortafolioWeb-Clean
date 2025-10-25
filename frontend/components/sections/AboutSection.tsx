@@ -45,9 +45,9 @@ const advantages = [
 ];
 
 const stats = [
-  { label: 'Años de Experiencia', value: '7+', delay: 0 },
-  { label: 'Proyectos Completados', value: '25+', delay: 0.1 },
-  { label: 'Tecnologías Dominadas', value: '29+', delay: 0.2 },
+  { label: 'Años de Experiencia', value: '8', delay: 0 },
+  { label: 'Proyectos Completados', value: '5', delay: 0.1 },
+  { label: 'Tecnologías Dominadas', value: '20', delay: 0.2 },
   { label: 'Empresas', value: '5', delay: 0.3 },
 ];
 
@@ -55,6 +55,7 @@ export function AboutSection() {
   return (
     <section id="about" className="py-20 px-4 bg-secondary/20">
       <div className="max-w-7xl mx-auto">
+        {/* 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,12 +65,12 @@ export function AboutSection() {
         >
           <h2 className="text-4xl font-bold mb-4">Sobre Mí</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Técnico en Computación e Informática con más de 5 años en el sector financiero, 
-            especializado en análisis de datos, automatización de procesos e inteligencia de negocio.
+            Técnico en Computación e Informática con experiencia en sectores como el financiero, educacion y tecnologia.
           </p>
         </motion.div>
+        */}
 
-        {/* Bio detallada */}
+        {/* Bio detallada 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -94,7 +95,7 @@ export function AboutSection() {
             </p>
           </Card>
         </motion.div>
-
+          */}
         {/* Estadísticas */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
@@ -129,7 +130,7 @@ export function AboutSection() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <h3 className="text-3xl font-bold text-center mb-12">Ventajas Competitivas</h3>
+          <h3 className="text-3xl font-bold text-center mb-12">Competencias</h3>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

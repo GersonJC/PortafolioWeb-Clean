@@ -6,8 +6,8 @@ import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { name: 'Sobre Mí', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Experiencia', href: '#experience' },
+  //{ name: 'Skills', href: '#skills' },
+  //{ name: 'Experiencia', href: '#experience' },
   { name: 'Proyectos', href: '#projects' },
   { name: 'Contacto', href: '#contact' },
 ];
@@ -45,7 +45,8 @@ export function Navbar() {
           {/* Logo */}
           <motion.a
             href="#"
-            className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60"
+            //className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60"
+            className="text-2xl font-bold text-gray-800 hover:text-primary transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -100,7 +101,7 @@ export function Navbar() {
         }}
         transition={{ duration: 0.3 }}
       >
-        <div className="px-4 py-4 space-y-3 bg-background/95 backdrop-blur-lg border-t border-border">
+        <div className="px-4 py-4 space-y-3 bg-white border-t border-gray-200 shadow-lg">
           {navItems.map((item, index) => (
             <motion.a
               key={item.name}

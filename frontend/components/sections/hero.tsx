@@ -2,8 +2,10 @@
 
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { AnimatedButton } from '@/components/ui/animated-button';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { handleDownloadCV, scrollToProjects } from '@/lib/utils';
+import { socialLinks } from '@/lib/links';
 
 const roles = [
   'Ingeniero de Sistemas',
@@ -12,6 +14,7 @@ const roles = [
   'Backend Developer',
   
 ];
+
 
 export function Hero() {
   const [currentRole, setCurrentRole] = useState(0);
@@ -78,7 +81,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60"
+            className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text bg-gradient-to-r from-foreground to-foreground/60"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -110,16 +113,17 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-wrap gap-4 justify-center mb-12"
+            className="flex flex-wrap gap-6 justify-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <AnimatedButton size="lg" className="gap-2">
+            <AnimatedButton size='lg' className='gap-2' onClick={ () => scrollToProjects ()}>
               Ver Proyectos
-              <ArrowDown className="w-4 h-4" />
+              {/*ArrowDown className="w-4 h-4" */}
             </AnimatedButton>
-            <AnimatedButton size="lg" variant="outline" className="gap-2">
+            <AnimatedButton size='lg' className='gap-2' onClick={ () => handleDownloadCV ()}>
+              {/*Download className="w-4 h-4" */}
               Descargar CV
             </AnimatedButton>
           </motion.div>
@@ -131,11 +135,7 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
           >
-            {[
-              { icon: Github, href: '#', label: 'GitHub' },
-              { icon: Linkedin, href: '#', label: 'LinkedIn' },
-              { icon: Mail, href: '#', label: 'Email' },
-            ].map((social, index) => (
+            {socialLinks.map((social, index) => (
               <motion.a
                 key={social.label}
                 href={social.href}
@@ -156,13 +156,14 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}
         transition={{
           opacity: { delay: 1.5, duration: 0.5 },
           y: { repeat: Infinity, duration: 2 },
         }}
+        onClick={()=> scrollToProjects ()}
       >
         <ArrowDown className="w-6 h-6 text-muted-foreground" />
       </motion.div>
