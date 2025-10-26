@@ -6,6 +6,7 @@ import { ProjectsSection } from '@/components/sections/ProjectsSection';
 import { ExperienceSection } from '@/components/sections/ExperienceSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { Footer } from '@/components/sections/Footer';
+import { ApiDocsSection } from '@/components/sections/ApiDocs';
 
 export default function Home() {
   return (
@@ -16,7 +17,9 @@ export default function Home() {
       {/*SkillsSection*/}
       {/*ExperienceSection*/}
       <ProjectsSection />
+      
       <ContactSection />
+      <ApiDocsSection />
       <Footer/>
       
       {/* Placeholder */}

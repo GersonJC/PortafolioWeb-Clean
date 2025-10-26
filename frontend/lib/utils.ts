@@ -147,22 +147,3 @@ export const SECTION_IDS = {
   CONTACT: 'contact',
 } as const;
 
-
-/* socialLinks */
-export const socialLinks = [
-  {
-    icon: Github,
-    href: 'https://github.com/GersonJC',
-    label: 'GitHub',
-  },
-  {
-    icon: Linkedin,
-    href: 'https://www.linkedin.com/in/gersoncarranza/', 
-    label: 'LinkedIn',
-  },
-  {
-    icon: Mail,
-    href: 'mailto:jotag.carranza@gmail.com',
-    label: 'Email',
-  },
-]

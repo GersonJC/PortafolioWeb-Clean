@@ -4,27 +4,7 @@ import { motion } from 'framer-motion';
 import { ContactForm } from './ContactForm';
 import { Card } from '@/components/ui/card';
 import { Mail, Linkedin, Github, MapPin } from 'lucide-react';
-
-const contactInfo = [
-  {
-    icon: Mail,
-    label: 'Email',
-    value: 'jotag.carranza@gmail.com',
-    href: 'mailto:jotag.carranza@gmail.com',
-  },
-  {
-    icon: Linkedin,
-    label: 'LinkedIn',
-    value: 'Perfil profesional',
-    href: 'https://www.linkedin.com/in/gersoncarranza/', 
-  },
-  {
-    icon: Github,
-    label: 'GitHub',
-    value: '@GersonJC',
-    href: 'https://github.com/GersonJC',
-  },
-];
+import { socialLinks } from '@/lib/links';
 
 export function ContactSection() {
   return (
@@ -66,7 +46,7 @@ export function ContactSection() {
             <div>
               <h3 className="text-2xl font-bold mb-6">Información de Contacto</h3>
               <div className="space-y-4">
-                {contactInfo.map((info, index) => (
+                {socialLinks.map((info, index) => (
                   <motion.div
                     key={info.label}
                     initial={{ opacity: 0, y: 20 }}

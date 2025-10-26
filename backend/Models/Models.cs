@@ -65,4 +65,16 @@ namespace PortfolioBackend.Models
         public string Message { get; set; }
         public int Count { get; set; }
     }
+
+    public class ContactMessage
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Subject { get; set; } = string.Empty;
+        public string Message { get; set; } = string.Empty;
+        public DateTime CreatedAt { get; set; }
+        public string? IpAddress { get; set; }
+        public string Status { get; set; } = "Pendiente";
+    }
 }

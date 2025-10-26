@@ -28,27 +28,43 @@ export function ContactForm() {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('sending');
-    setErrorMessage('');
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setStatus('sending');
+  setErrorMessage('');
 
-    try {
-      // Aquí iría la llamada a la API de contacto
-      // Por ahora simulamos el envío
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+  try {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:7071/api';
+    
+    const response = await fetch(`${apiUrl}/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
 
-      // Simular éxito
-      setStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+    const data = await response.json();
 
-      // Resetear después de 5 segundos
-      setTimeout(() => setStatus('idle'), 5000);
-    } catch (error) {
-      setStatus('error');
-      setErrorMessage('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
+    if (!response.ok || !data.success) {
+      throw new Error(data.message || 'Error al enviar el mensaje');
     }
-  };
+
+    setStatus('success');
+    setFormData({ name: '', email: '', subject: '', message: '' });
+
+    // Resetear después de 5 segundos
+    setTimeout(() => setStatus('idle'), 5000);
+  } catch (error) {
+    console.error('Error:', error);
+    setStatus('error');
+    setErrorMessage(
+      error instanceof Error 
+        ? error.message 
+        : 'Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.'
+    );
+  }
+};
 
   return (
     <Card className="p-8 max-w-2xl mx-auto">
