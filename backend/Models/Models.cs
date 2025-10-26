@@ -18,7 +18,27 @@ namespace PortfolioBackend.Models
         public bool Featured { get; set; }
         public string Category { get; set; }
         public int OrderIndex { get; set; }
+            public string Context { get; set; }
+    public string Problem { get; set; }
+    public string Objective { get; set; }
+    public ProjectChartConfig ChartConfig { get; set; }
     }
+
+    public class ProjectChartConfig
+{
+    public string ChartType { get; set; } // 'line', 'bar', 'area'
+    public string Title { get; set; }
+    public string XAxisLabel { get; set; }
+    public string YAxisLabel { get; set; }
+    public List<ChartDataPoint> Data { get; set; }
+}
+
+public class ChartDataPoint
+{
+    public string Name { get; set; }
+    public decimal Value { get; set; }
+    public string Category { get; set; }
+}
 
     public class Experience
     {

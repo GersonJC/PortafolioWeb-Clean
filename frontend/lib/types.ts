@@ -14,6 +14,24 @@ export interface Project {
   featured: boolean;
   category: string;
   orderIndex: number;
+    context?: string;
+  problem?: string;
+  objective?: string;
+  chartConfig?: ProjectChartConfig;
+}
+
+export interface ProjectChartConfig {
+  chartType: 'line' | 'bar' | 'area';
+  title: string;
+  xAxisLabel: string;
+  yAxisLabel: string;
+  data: ChartDataPoint[];
+}
+
+export interface ChartDataPoint {
+  name: string;
+  value: number;
+  category?: string;
 }
 
 export interface Experience {

@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getProjects } from '@/lib/api';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
+import Link from 'next/link';
 
 export function ProjectsSection() {
   const { data: projects, isLoading, error } = useQuery({
@@ -58,6 +59,7 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects?.map((project, index) => (
+            <Link href={`/projects/${project.id}`} key={project.id}>
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -114,6 +116,7 @@ export function ProjectsSection() {
                 </div>
               </Card>
             </motion.div>
+            </Link>
           ))}
         </div>
       </div>
