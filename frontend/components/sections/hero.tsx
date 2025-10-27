@@ -107,9 +107,9 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            Más de 5 años de experiencia en análisis de datos, desarrollo backend
-            y soluciones de inteligencia de negocio. Especializado en Azure, SQL
-            Server y automatización de procesos.
+            Amplia experiencia en el Analisis de Datos, con gran conocimiento 
+            en desarrollo backend y soluciones de inteligencia de negocio. 
+            Especializado en SQL y automatización de procesos.
           </motion.p>
 
           <motion.div

@@ -21,7 +21,7 @@ export interface Project {
 }
 
 export interface ProjectChartConfig {
-  chartType: 'line' | 'bar' | 'area';
+  chartType: 'line' | 'bar' | 'area'| 'scatter';
   title: string;
   xAxisLabel: string;
   yAxisLabel: string;
@@ -32,6 +32,9 @@ export interface ChartDataPoint {
   name: string;
   value: number;
   category?: string;
+  x?: number;
+  y?: number;
+  z?: number;
 }
 
 export interface Experience {
@@ -74,4 +77,39 @@ export interface ApiResponse<T> {
   data: T;
   message: string;
   count: number;
+}
+
+export interface ApiParameter {
+  Name: string;
+  Type: string;
+  Required: boolean;
+  Description: string;
+}
+
+export interface ApiRequestBody {
+  Field: string;
+  Type: string;
+  Required: boolean;
+  Description: string;
+}
+
+export interface ApiEndpoint {
+  Id: number;
+  Name: string;
+  Method: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  Endpoint: string;
+  Description: string;
+  Category: string;
+  Parameters?: ApiParameter[];
+  RequestBody?: ApiRequestBody[];
+  ExampleRequest?: string;
+  OrderIndex: number;
+}
+
+export interface ApiDocumentation {
+  Id: number;
+  Title: string;
+  Description: string;
+  BaseUrl: string;
+  Technologies: string[];
 }

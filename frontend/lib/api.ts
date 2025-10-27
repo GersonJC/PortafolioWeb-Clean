@@ -63,3 +63,18 @@ export async function getSkills(category?: string): Promise<Skill[]> {
 export async function getEducation(): Promise<Education[]> {
   return fetchAPI<Education[]>('/education');
 }
+
+// API Documentation
+export async function getApiDocumentation(): Promise<ApiDocumentation> {
+  const response = await fetch(`${API_BASE_URL}/api-docs`);
+  if (!response.ok) throw new Error('Failed to fetch API documentation');
+  const data = await response.json();
+  return data.data;
+}
+
+export async function getApiEndpoints(): Promise<ApiEndpoint[]> {
+  const response = await fetch(`${API_BASE_URL}/api-endpoints`);
+  if (!response.ok) throw new Error('Failed to fetch API endpoints');
+  const data = await response.json();
+  return data.data;
+}

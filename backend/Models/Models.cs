@@ -97,4 +97,43 @@ public class ChartDataPoint
         public string? IpAddress { get; set; }
         public string Status { get; set; } = "Pendiente";
     }
+
+    public class ApiDocumentation
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string BaseUrl { get; set; }
+        public List<string> Technologies { get; set; }
+    }
+
+    public class ApiEndpoint
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Method { get; set; }
+        public string Endpoint { get; set; }
+        public string Description { get; set; }
+        public string Category { get; set; }
+        public List<ApiParameter>? Parameters { get; set; }
+        public List<ApiRequestBody>? RequestBody { get; set; }
+        public string? ExampleRequest { get; set; }
+        public int OrderIndex { get; set; }
+    }
+
+    public class ApiParameter
+    {
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public bool Required { get; set; }
+        public string Description { get; set; }
+    }
+
+    public class ApiRequestBody
+    {
+        public string Field { get; set; }
+        public string Type { get; set; }
+        public bool Required { get; set; }
+        public string Description { get; set; }
+    }
 }
